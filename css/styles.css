@@ -43,9 +43,6 @@ nav ul {
   height: 48px;
   align-items: center;
 }
-nav li {
-  background-color: red;
-}
 header>div ul:not(.dk-blue):last-child {
   max-width: 240px;
   flex-basis: 240px;
@@ -54,9 +51,24 @@ header>div ul:not(.dk-blue):last-child {
 }
 
 /*main*/
+main>section {
+  display: flex;
+  flex-wrap: wrap;
+}
+h3 {
+  flex-basis: 100%;
+}
+/*gutter spacing is 2.5%
+for defaults which will be 2 across one (100%-2.5%)/2*/
+section>section {
+  flex-basis: calc((100%-2.5%)/2);
+}
 
-
-
+section>section:nth-of-type(1),
+section>section:nth-of-type(2),
+section>section:nth-of-type(3) {
+  flex-basis: calc((100%-2.5%*2)/3);
+}
 
 
 
